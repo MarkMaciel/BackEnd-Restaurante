@@ -7,10 +7,10 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments("id");
 
-      table.string("Nome").notNullable();
-      table.integer("CPF", 11).notNullable();
-      table.string("Email");
-      table.string("Numero de Telefone").notNullable();
+      table.string("nome").notNullable();
+      table.integer("cpf", 11).notNullable();
+      table.string("email");
+      table.string("telefone").notNullable();
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
