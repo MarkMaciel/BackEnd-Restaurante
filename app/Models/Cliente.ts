@@ -6,10 +6,10 @@ export default class Cliente extends BaseModel {
   public id: number;
 
   @column()
-  public name: string;
+  public nome: string;
 
   @column()
-  public cpf: number;
+  public cpf: string;
 
   @column()
   public email: string;

@@ -6,7 +6,7 @@ export default class Bebida extends BaseModel {
   public id: number;
 
   @column()
-  public name: string;
+  public nome: string;
 
   @column()
   public tipo: string;

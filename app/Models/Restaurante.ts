@@ -6,7 +6,7 @@ export default class Restaurante extends BaseModel {
   public id: number;
 
   @column()
-  public name: string;
+  public nome: string;
 
   @column()
   public localizacao: string;
