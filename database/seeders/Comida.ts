@@ -9,7 +9,16 @@ export default class extends BaseSeeder {
         tipo: "Prato Principal",
         preco: "R$ 45,00",
       },
-      {},
+      {
+        nome: "Salada temperada",
+        tipo: "Entrada",
+        preco: "R$ 25,00",
+      },
+      {
+        nome: "Petit gateau",
+        tipo: "Sobremesa",
+        preco: "R$ 20,00",
+      },
     ]);
   }
 }

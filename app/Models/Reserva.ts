@@ -6,7 +6,7 @@ export default class Reserva extends BaseModel {
   public id: number;
 
   @column()
-  public clienteId: string;
+  public clienteId: number;
 
   @column()
   public dataEhora: Date;
