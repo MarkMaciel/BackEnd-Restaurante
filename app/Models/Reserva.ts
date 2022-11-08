@@ -1,5 +1,6 @@
 import { DateTime } from "luxon";
-import { BaseModel, column } from "@ioc:Adonis/Lucid/Orm";
+import { BaseModel, BelongsTo, belongsTo, column } from "@ioc:Adonis/Lucid/Orm";
+import Cliente from "./Cliente";
 
 export default class Reserva extends BaseModel {
   @column({ isPrimary: true })
@@ -19,4 +20,7 @@ export default class Reserva extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime;
+
+  @belongsTo(() => Cliente)
+  public clientes: BelongsTo<typeof Cliente>;
 }
