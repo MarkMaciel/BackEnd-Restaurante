@@ -22,5 +22,5 @@ export default class Bebida extends BaseModel {
   public updatedAt: DateTime;
 
   @belongsTo(() => Restaurante)
-  public fornecedores: BelongsTo<typeof Restaurante>;
+  public restaurantes: BelongsTo<typeof Restaurante>;
 }
