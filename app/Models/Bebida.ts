@@ -10,9 +10,6 @@ export default class Bebida extends BaseModel {
   public nome: string;
 
   @column()
-  public tipo: string;
-
-  @column()
   public preco: string;
 
   @column.dateTime({ autoCreate: true })
@@ -22,5 +19,5 @@ export default class Bebida extends BaseModel {
   public updatedAt: DateTime;
 
   @belongsTo(() => Restaurante)
-  public restaurantes: BelongsTo<typeof Restaurante>;
+  public restaurante: BelongsTo<typeof Restaurante>;
 }

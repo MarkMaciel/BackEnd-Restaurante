@@ -22,5 +22,5 @@ export default class Reserva extends BaseModel {
   public updatedAt: DateTime;
 
   @belongsTo(() => Cliente)
-  public clientes: BelongsTo<typeof Cliente>;
+  public cliente: BelongsTo<typeof Cliente>;
 }

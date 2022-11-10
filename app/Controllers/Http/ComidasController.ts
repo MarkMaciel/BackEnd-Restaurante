@@ -5,7 +5,7 @@ import ComidaValidator from "App/Validators/ComidaValidator";
 
 export default class ComidasController {
   async index() {
-    return await Comida.query();
+    return await Comida.query().preload("restaurante");
   }
 
   async store({ request }) {

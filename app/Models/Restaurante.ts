@@ -3,6 +3,8 @@ import { BaseModel, column, hasMany, HasMany } from "@ioc:Adonis/Lucid/Orm";
 import Cliente from "./Cliente";
 import Funcionario from "./Funcionario";
 import Fornecedore from "./Fornecedore";
+import Bebida from "./Bebida";
+import Comida from "./Comida";
 
 export default class Restaurante extends BaseModel {
   @column({ isPrimary: true })
@@ -13,9 +15,6 @@ export default class Restaurante extends BaseModel {
 
   @column()
   public localizacao: string;
-
-  @column()
-  public tipo: string;
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime;
@@ -31,4 +30,10 @@ export default class Restaurante extends BaseModel {
 
   @hasMany(() => Fornecedore)
   public fornecedores: HasMany<typeof Fornecedore>;
+
+  @hasMany(() => Bebida)
+  public bebidas: HasMany<typeof Bebida>;
+
+  @hasMany(() => Comida)
+  public comidas: HasMany<typeof Comida>;
 }

@@ -5,7 +5,7 @@ import ClienteValidator from "App/Validators/ClienteValidator";
 
 export default class ClientesController {
   async index() {
-    return await Cliente.query();
+    return await Cliente.query().preload("reservas");
   }
 
   async store({ request }) {

@@ -5,7 +5,7 @@ import FornecedorValidator from "App/Validators/FornecedorValidator";
 
 export default class FornecedoresController {
   async index() {
-    return await Fornecedore.query();
+    return await Fornecedore.query().preload("restaurantes");
   }
 
   async store({ request }) {

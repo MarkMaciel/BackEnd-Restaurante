@@ -28,5 +28,5 @@ export default class Funcionario extends BaseModel {
   public updatedAt: DateTime;
 
   @belongsTo(() => Restaurante)
-  public restaurantes: BelongsTo<typeof Restaurante>;
+  public restaurante: BelongsTo<typeof Restaurante>;
 }

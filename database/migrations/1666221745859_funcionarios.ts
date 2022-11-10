@@ -11,6 +11,7 @@ export default class extends BaseSchema {
       table.date("data_de_nascimento").notNullable();
       table.string("endereço").notNullable();
       table.string("telefone").notNullable();
+      table.string("email");
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL

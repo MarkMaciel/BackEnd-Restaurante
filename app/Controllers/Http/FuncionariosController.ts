@@ -5,7 +5,7 @@ import FuncionarioValidator from "App/Validators/FuncionarioValidator";
 
 export default class FuncionariosController {
   async index() {
-    return await Funcionario.query();
+    return await Funcionario.query().preload("restaurante");
   }
 
   async store({ request }) {

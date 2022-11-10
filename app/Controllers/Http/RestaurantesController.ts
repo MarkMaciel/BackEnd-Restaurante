@@ -5,7 +5,12 @@ import RestauranteValidator from "App/Validators/RestauranteValidator";
 
 export default class RestaurantesController {
   async index() {
-    return await Restaurante.query();
+    return await Restaurante.query()
+      .preload("clientes")
+      .preload("comidas")
+      .preload("bebidas")
+      .preload("fornecedores")
+      .preload("funcionarios");
   }
 
   async store({ request }) {

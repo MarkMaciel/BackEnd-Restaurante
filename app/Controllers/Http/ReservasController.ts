@@ -5,7 +5,7 @@ import ReservaValidator from "App/Validators/ReservaValidator";
 
 export default class ReservasController {
   async index() {
-    return await Reserva.query();
+    return await Reserva.query().preload("cliente");
   }
 
   async store({ request }) {

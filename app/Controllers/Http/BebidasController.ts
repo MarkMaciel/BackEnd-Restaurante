@@ -5,7 +5,7 @@ import BebidaValidator from "App/Validators/BebidaValidator";
 
 export default class BebidasController {
   async index() {
-    return await Bebida.query();
+    return await Bebida.query().preload("restaurante");
   }
 
   async store({ request }) {
