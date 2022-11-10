@@ -7,12 +7,10 @@ export default class extends BaseSeeder {
       {
         nome: "Coco Bambu",
         localizacao: "ParkShopping",
-        tipo: "Comida Brasileira",
       },
       {
         nome: "TacoPep",
         localizacao: "Taguatinga",
-        tipo: "Comida Mexicana",
       },
     ]);
   }

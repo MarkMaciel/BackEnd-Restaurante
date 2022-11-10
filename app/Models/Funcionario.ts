@@ -21,6 +21,9 @@ export default class Funcionario extends BaseModel {
   @column()
   public telefone: string;
 
+  @column()
+  public email: string;
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime;
 

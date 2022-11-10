@@ -10,6 +10,7 @@ export default class extends BaseSeeder {
         dataDeNascimento: new Date(2002, 1, 19),
         endereco: "Setor O - Ceilândia norte",
         telefone: "+55061981467652",
+        email: "maciel.distribuição@gmail.com",
       },
       {
         nome: "Mendes",
@@ -17,6 +18,7 @@ export default class extends BaseSeeder {
         dataDeNascimento: new Date(2000, 1, 19),
         endereco: "Taguatiganta Norte",
         telefone: "+55061981467652",
+        email: "mendes.distribuição@gmail.com",
       },
     ]);
   }
