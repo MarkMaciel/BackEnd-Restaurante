@@ -7,10 +7,13 @@ export default class Funcionario extends BaseModel {
   public id: number;
 
   @column()
+  public restauranteId: number;
+
+  @column()
   public nome: string;
 
   @column()
-  public cpf: number;
+  public cpf: string;
 
   @column()
   public dataDeNascimento: Date;

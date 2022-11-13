@@ -5,25 +5,16 @@ export default class FuncionarioValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   public schema = schema.create({
+    restauranteId: schema.number(),
     nome: schema.string([rules.maxLength(100)]),
     cpf: schema.string([
-      rules.range(11, 14),
       rules.regex(/^[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}$/),
       rules.unique({ table: "funcionarios", column: "cpf" }),
     ]),
-    dataNascimento: schema.date.optional(),
-    uf: schema.string.optional([
-      rules.minLength(2),
-      rules.maxLength(2),
-      rules.alpha(),
-    ]),
-    cidade: schema.string.optional([rules.maxLength(100)]),
-    logradouro: schema.string.optional([rules.maxLength(100)]),
-    complemento: schema.string.optional([rules.maxLength(100)]),
-    cep: schema.string.optional([rules.range(8, 9)]),
+    dataDeNascimento: schema.date.optional(),
+    endereco: schema.string.optional([rules.maxLength(100)]),
     telefone: schema.string([
-      rules.range(11, 15),
-      rules.mobile({ locale: ["pt-BR"] }),
+      rules.maxLength(15),
       rules.unique({ table: "funcionarios", column: "telefone" }),
     ]),
     email: schema.string([

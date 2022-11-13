@@ -7,6 +7,9 @@ export default class Fornecedore extends BaseModel {
   public id: number;
 
   @column()
+  public restauranteId: number;
+
+  @column()
   public nome: string;
 
   @column()

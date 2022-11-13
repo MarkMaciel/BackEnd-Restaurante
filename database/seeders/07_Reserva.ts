@@ -5,8 +5,9 @@ export default class extends BaseSeeder {
   public async run() {
     await Reserva.createMany([
       {
+        restauranteId: 1,
         clienteId: 1,
-        dataEhora: new Date(2022, 12, 28, 20, 0, 0),
+        dataHora: new Date(2022, 12, 28, 20, 0, 0),
       },
     ]);
   }

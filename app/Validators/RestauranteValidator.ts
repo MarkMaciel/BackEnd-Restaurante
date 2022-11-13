@@ -6,11 +6,7 @@ export default class RestauranteValidator {
 
   public schema = schema.create({
     nome: schema.string([rules.maxLength(100)]),
-
-    cidade: schema.string([rules.maxLength(100), rules.alpha()]),
-    logradouro: schema.string([rules.maxLength(100)]),
-    complemento: schema.string.optional([rules.maxLength(100)]),
-    cep: schema.string.optional([rules.range(8, 9)]),
+    endereco: schema.string([rules.maxLength(100), rules.alpha()]),
   });
 
   public messages: CustomMessages = {};

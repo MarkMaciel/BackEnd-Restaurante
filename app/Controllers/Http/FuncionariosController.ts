@@ -28,7 +28,15 @@ export default class FuncionariosController {
     const id = await request.param("id");
     const funcionario = await Funcionario.findOrFail(id);
 
-    const dados = await request.validate(FuncionarioValidator);
+    const dados = await request.only([
+      "restauranteId",
+      "nome",
+      "cpf",
+      "dataDeNascimento",
+      "endereco",
+      "telefone",
+      "email",
+    ]);
 
     await funcionario.merge(dados).save();
 

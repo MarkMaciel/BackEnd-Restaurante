@@ -16,10 +16,7 @@ export default class FornecedorValidator {
       rules.maxLength(2),
       rules.alphaNum(),
     ]),
-    cidade: schema.string([rules.maxLength(100), rules.alpha()]),
-    logradouro: schema.string([rules.maxLength(100)]),
-    complemento: schema.string.optional([rules.maxLength(100)]),
-    cep: schema.string.optional([rules.range(8, 9)]),
+    endereco: schema.string([rules.maxLength(100), rules.alpha()]),
   });
 
   public messages: CustomMessages = {};
