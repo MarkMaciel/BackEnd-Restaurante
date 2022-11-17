@@ -21,11 +21,11 @@
 import Route from "@ioc:Adonis/Core/Route";
 
 Route.group(() => {
-  Route.resource("/cliente", "ClientesController").apiOnly;
-  Route.resource("/restaurante", "RestaurantesController").apiOnly;
-  Route.resource("/funcionario", "FuncionariosController").apiOnly;
-  Route.resource("/fornecedore", "FornecedoresController").apiOnly;
-  Route.resource("/reserva", "ReservasController").apiOnly;
-  Route.resource("/bebida", "BebidasController").apiOnly;
-  Route.resource("/comida", "ComidasController").apiOnly;
+  Route.resource("/cliente", "ClientesController").apiOnly();
+  Route.resource("/restaurante", "RestaurantesController").apiOnly();
+  Route.resource("/funcionario", "FuncionariosController").apiOnly();
+  Route.resource("/fornecedore", "FornecedoresController").apiOnly();
+  Route.resource("/reserva", "ReservasController").apiOnly();
+  Route.resource("/bebida", "BebidasController").apiOnly();
+  Route.resource("/comida", "ComidasController").apiOnly();
 });

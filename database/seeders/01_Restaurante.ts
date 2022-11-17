@@ -5,12 +5,8 @@ export default class extends BaseSeeder {
   public async run() {
     await Restaurante.createMany([
       {
-        nome: "Coco Bambu",
+        nome: "Coco bambu",
         localizacao: "ParkShopping",
-      },
-      {
-        nome: "TacoPep",
-        localizacao: "Taguatinga",
       },
     ]);
   }

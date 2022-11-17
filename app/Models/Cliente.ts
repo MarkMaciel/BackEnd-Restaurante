@@ -1,6 +1,14 @@
 import { DateTime } from "luxon";
-import { BaseModel, column, HasMany, hasMany } from "@ioc:Adonis/Lucid/Orm";
+import {
+  BaseModel,
+  BelongsTo,
+  belongsTo,
+  column,
+  HasMany,
+  hasMany,
+} from "@ioc:Adonis/Lucid/Orm";
 import Reserva from "./Reserva";
+import Restaurante from "./Restaurante";
 
 export default class Cliente extends BaseModel {
   @column({ isPrimary: true })
@@ -29,4 +37,7 @@ export default class Cliente extends BaseModel {
 
   @hasMany(() => Reserva)
   public reservas: HasMany<typeof Reserva>;
+
+  @belongsTo(() => Restaurante)
+  public restaurante: BelongsTo<typeof Restaurante>;
 }

@@ -16,7 +16,7 @@ export default class Funcionario extends BaseModel {
   public cpf: string;
 
   @column()
-  public dataDeNascimento: Date;
+  public dataNascimento: Date;
 
   @column()
   public endereco: string;
