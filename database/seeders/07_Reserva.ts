@@ -7,6 +7,7 @@ export default class extends BaseSeeder {
       {
         restauranteId: 1,
         clienteId: 1,
+        qtdPessoas: 4,
         dataHora: new Date(2022, 12, 28, 20, 0, 0),
       },
     ]);

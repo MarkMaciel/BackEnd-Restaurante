@@ -1,6 +1,7 @@
 // import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import Reserva from "App/Models/Reserva";
+import ReservaUpdateValidator from "App/Validators/ReservaUpdateValidator";
 import ReservaValidator from "App/Validators/ReservaValidator";
 
 export default class ReservasController {
@@ -21,14 +22,15 @@ export default class ReservasController {
   async destroy({ request }) {
     const id = await request.param("id");
     const reserva = await Reserva.findOrFail(id);
-    return reserva.delete();
+    reserva.delete();
+    return "Reserva excluida com sucesso";
   }
 
   async update({ request }) {
     const id = await request.param("id");
     const reserva = await Reserva.findOrFail(id);
 
-    const dados = await request.validate(ReservaValidator);
+    const dados = await request.validate(ReservaUpdateValidator);
 
     await reserva.merge(dados).save();
 

@@ -1,18 +1,18 @@
 import { schema, rules, CustomMessages } from "@ioc:Adonis/Core/Validator";
 import type { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
 
-export default class ReservaValidator {
+export default class ReservaUpdateValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   public schema = schema.create({
-    restauranteId: schema.number([
+    restauranteId: schema.number.optional([
       rules.exists({ table: "restaurantes", column: "id" }),
     ]),
-    clienteId: schema.number([
+    clienteId: schema.number.optional([
       rules.exists({ table: "clientes", column: "id" }),
     ]),
-    dataHora: schema.date(),
-    qtdPessoas: schema.number(),
+    dataHora: schema.date.optional(),
+    qtdPessoas: schema.number.optional(),
   });
   public messages: CustomMessages = {};
 }

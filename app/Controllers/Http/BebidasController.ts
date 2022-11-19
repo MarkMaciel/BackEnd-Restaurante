@@ -1,6 +1,7 @@
 // import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import Bebida from "App/Models/Bebida";
+import BebidaUpdateValidator from "App/Validators/BebidaUpdateValidator";
 import BebidaValidator from "App/Validators/BebidaValidator";
 
 export default class BebidasController {
@@ -21,14 +22,15 @@ export default class BebidasController {
   async destroy({ request }) {
     const id = await request.param("id");
     const bebida = await Bebida.findOrFail(id);
-    return bebida.delete();
+    bebida.delete();
+    return "Bebida excluida com sucesso";
   }
 
   async update({ request }) {
     const id = await request.param("id");
     const bebida = await Bebida.findOrFail(id);
 
-    const dados = await request.validate(BebidaValidator);
+    const dados = await request.validate(BebidaUpdateValidator);
 
     await bebida.merge(dados).save();
 

@@ -21,7 +21,8 @@ export default class ComidasController {
   async destroy({ request }) {
     const id = await request.param("id");
     const comida = await Comida.findOrFail(id);
-    return comida.delete();
+    comida.delete();
+    return "Comida excluida com sucesso";
   }
 
   async update({ request }) {

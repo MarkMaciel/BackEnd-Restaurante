@@ -1,6 +1,7 @@
 // import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import Fornecedore from "App/Models/Fornecedore";
+import FornecedorUpdateValidator from "App/Validators/FornecedorUpdateValidator";
 import FornecedorValidator from "App/Validators/FornecedorValidator";
 
 export default class FornecedoresController {
@@ -21,14 +22,16 @@ export default class FornecedoresController {
   async destroy({ request }) {
     const id = await request.param("id");
     const fornecedor = await Fornecedore.findOrFail(id);
-    return fornecedor.delete();
+    fornecedor.delete();
+
+    return "Fornecedor excluido com sucesso";
   }
 
   async update({ request }) {
     const id = await request.param("id");
     const fornecedor = await Fornecedore.findOrFail(id);
 
-    const dados = await request.validate(FornecedorValidator);
+    const dados = await request.validate(FornecedorUpdateValidator);
 
     await fornecedor.merge(dados).save();
 

@@ -11,6 +11,9 @@ export default class BebidaValidator {
       rules.unique({ table: "bebidas", column: "nome" }),
     ]),
     preco: schema.string([]),
+    restauranteId: schema.number([
+      rules.exists({ table: "bebidas", column: "id" }),
+    ]),
   });
 
   public messages: CustomMessages = {};

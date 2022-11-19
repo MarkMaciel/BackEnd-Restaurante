@@ -26,7 +26,8 @@ export default class RestaurantesController {
   async destroy({ request }) {
     const id = await request.param("id");
     const restaurante = await Restaurante.findOrFail(id);
-    return restaurante.delete();
+    restaurante.delete();
+    return "Restaurante excluido com sucesso";
   }
 
   async update({ request }) {

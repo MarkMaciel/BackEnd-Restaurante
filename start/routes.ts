@@ -24,7 +24,7 @@ Route.group(() => {
   Route.resource("/cliente", "ClientesController").apiOnly();
   Route.resource("/restaurante", "RestaurantesController").apiOnly();
   Route.resource("/funcionario", "FuncionariosController").apiOnly();
-  Route.resource("/fornecedore", "FornecedoresController").apiOnly();
+  Route.resource("/fornecedor", "FornecedoresController").apiOnly();
   Route.resource("/reserva", "ReservasController").apiOnly();
   Route.resource("/bebida", "BebidasController").apiOnly();
   Route.resource("/comida", "ComidasController").apiOnly();
