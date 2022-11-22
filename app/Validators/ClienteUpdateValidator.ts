@@ -13,7 +13,7 @@ export default class ClienteUpdateValidator {
       rules.unique({ table: "clientes", column: "cpf" }),
     ]),
     telefone: schema.string.optional([
-      rules.range(11, 15),
+      rules.maxLength(100),
       rules.mobile({ locale: ["pt-BR"] }),
       rules.unique({ table: "clientes", column: "telefone" }),
     ]),
