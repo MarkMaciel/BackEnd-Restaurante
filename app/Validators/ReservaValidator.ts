@@ -11,7 +11,7 @@ export default class ReservaValidator {
     clienteId: schema.number([
       rules.exists({ table: "clientes", column: "id" }),
     ]),
-    dataHora: schema.date(),
+    dataHora: schema.date({ format: "yyyy-MM-dd HH:mm:ss" }),
     qtdPessoas: schema.number(),
   });
   public messages: CustomMessages = {};

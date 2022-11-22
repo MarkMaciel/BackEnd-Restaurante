@@ -1,6 +1,7 @@
 // import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import Comida from "App/Models/Comida";
+import ComidaUpdateValidator from "App/Validators/ComidaUpdateValidator";
 import ComidaValidator from "App/Validators/ComidaValidator";
 
 export default class ComidasController {
@@ -29,7 +30,7 @@ export default class ComidasController {
     const id = await request.param("id");
     const comida = await Comida.findOrFail(id);
 
-    const dados = await request.validate(ComidaValidator);
+    const dados = await request.validate(ComidaUpdateValidator);
 
     await comida.merge(dados).save();
 
